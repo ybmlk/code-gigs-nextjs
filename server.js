@@ -15,6 +15,7 @@ db.authenticate()
 
 app.prepare().then(() => {
   const server = express();
+  const gigsRoutes = require('./routes/gigs.js');
 
   // Bodyparser middleware
   server.use(express.json());
@@ -24,8 +25,11 @@ app.prepare().then(() => {
   });
 
   server.get('/b', (req, res) => {
-    return app.render(req, res, '/b', req.query);
+    return app.render(req, res, '/b', { id: 'test2' });
   });
+
+  // Gig routes
+  server.use('/gigs', gigsRoutes(app));
 
   server.all('*', (req, res) => {
     return handle(req, res);
