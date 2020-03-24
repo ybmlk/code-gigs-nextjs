@@ -20,7 +20,7 @@ app.prepare().then(() => {
   server.use(express.json());
 
   server.get('/a', (req, res) => {
-    return app.render(req, res, '/a', req.query);
+    return app.render(req, res, '/a', { id: 'test' });
   });
 
   server.get('/b', (req, res) => {
