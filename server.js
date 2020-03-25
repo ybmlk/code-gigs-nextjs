@@ -20,6 +20,9 @@ app.prepare().then(() => {
   // Bodyparser middleware
   server.use(express.json());
 
+  // Set static folder
+  server.use(express.static(path.join(__dirname, 'public')));
+
   server.get('/a', (req, res) => {
     return app.render(req, res, '/a', { id: 'test' });
   });
@@ -29,7 +32,7 @@ app.prepare().then(() => {
   });
 
   // Gig routes
-  server.use('/gigs', gigsRoutes(app));
+  server.use('/api/gigs', gigsRoutes);
 
   server.all('*', (req, res) => {
     return handle(req, res);
