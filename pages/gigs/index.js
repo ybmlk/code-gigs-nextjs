@@ -14,34 +14,40 @@ export default () => {
 
   return (
     <Layout>
-      <section id='gigs' className='container'>
-        <h1>All Gigs</h1>
-        {!loading && gigs.length ? (
-          gigs.map(({ id, title, description, budget, contact_email, technologies }) => {
-            return (
-              <div className='gig' key={id}>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <ul>
-                  <li>Budget: {budget}</li>
-                  <li>
-                    <a href={`mailto:${contact_email}`} className='btn btn-reverse' target='_blank'>
-                      Apply Now
-                    </a>
-                  </li>
-                </ul>
-                <div className='tech'>
-                  <small>
-                    Technologies Needed: <span>{technologies}</span>
-                  </small>
+      <div className='container'>
+        <section id='gigs' className='container'>
+          <h1>All Gigs</h1>
+          {!loading && gigs.length ? (
+            gigs.map(({ id, title, description, budget, contact_email, technologies }) => {
+              return (
+                <div className='gig' key={id}>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <ul>
+                    <li>Budget: {budget}</li>
+                    <li>
+                      <a
+                        href={`mailto:${contact_email}`}
+                        className='btn btn-reverse'
+                        target='_blank'
+                      >
+                        Apply Now
+                      </a>
+                    </li>
+                  </ul>
+                  <div className='tech'>
+                    <small>
+                      Technologies Needed: <span>{technologies}</span>
+                    </small>
+                  </div>
                 </div>
-              </div>
-            );
-          })
-        ) : (
-          <p>No gigs available</p>
-        )}
-      </section>
+              );
+            })
+          ) : (
+            <p>No gigs available</p>
+          )}
+        </section>
+      </div>
     </Layout>
   );
 };

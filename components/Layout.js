@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
           </ul>
         </nav>
       </header>
-      <div className='container'>{children}</div>
+      {children}
     </div>
   );
 };

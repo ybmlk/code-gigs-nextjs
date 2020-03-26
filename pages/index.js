@@ -1,9 +1,9 @@
 import React from 'react';
-import Landing from '../components/Landing';
+import Layout from '../components/layout';
 
 export default () => {
   return (
-    <Landing>
+    <Layout>
       <section id='search' className='search-wrap'>
         <h1>Find A Coding Gig</h1>
         <form action='gigs.html' className='search-form'>
@@ -12,6 +12,6 @@ export default () => {
           <input type='submit' value='Search' />
         </form>
       </section>
-    </Landing>
+    </Layout>
   );
 };
