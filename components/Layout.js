@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
           crossorigin='anonymous'
         />
 
-        <link rel='stylesheet' href='css/style.css' />
+        <link rel='stylesheet' href='/css/style.css' />
         <title>CodeGig</title>
       </Head>
 
