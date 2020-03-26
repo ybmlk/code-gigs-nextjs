@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import Layout from '../../components/Layout';
 
 export default () => {
+  // State declaration
   const [gigs, setGigs] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch('/api/gigs')
       .then(data => data.json())
