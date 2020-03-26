@@ -26,7 +26,7 @@ export default () => {
                   <h3>{title}</h3>
                   <p>{description}</p>
                   <ul>
-                    <li>Budget: {budget}</li>
+                    <li>Budget: ${budget}</li>
                     <li>
                       <a
                         href={`mailto:${contact_email}`}
